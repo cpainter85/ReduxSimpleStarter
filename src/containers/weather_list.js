@@ -5,7 +5,7 @@ import Chart from '../components/chart';
 class WeatherList extends Component {
   renderWeather(cityData) {
     const name = cityData.city.name;
-    const temps = cityData.list.map(weather => weather.main.temp);
+    const temps = _.map(cityData.list.map(weather => weather.main.temp), (temp) => 1.8*(temp-273)+32);
 
     return(
       <tr key={name}>
